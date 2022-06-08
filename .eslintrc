@@ -1,0 +1,3 @@
+{
+  "extends": ["@antfu", "./src/.eslintrc-auto-import.json"]
+}

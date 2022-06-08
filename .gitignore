@@ -1,0 +1,12 @@
+dist/
+deploy_versions/
+.temp/
+.rn_temp/
+node_modules/
+.DS_Store
+taro-apis.json
+scripts/
+auto-imports.d.ts
+components.d.ts
+.eslintrc-auto-import.json
+Hooks/

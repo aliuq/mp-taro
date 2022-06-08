@@ -1,0 +1,20 @@
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
+import 'uno.css'
+import './app.css'
+// import { setStorageSync } from '@tarojs/taro'
+
+const App = createApp({
+  async onShow() {
+    if (!getStorageSync('theme')) {
+      const info = await getSystemInfo()
+      setStorageSync('theme', info.theme || 'light')
+    }
+  },
+  // 入口组件不需要实现 render 方法，即使实现了也会被 taro 所覆盖
+})
+
+App.use(createPinia())
+
+export default App
