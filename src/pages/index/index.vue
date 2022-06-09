@@ -4,11 +4,14 @@ function go() {
   navigateTo({ url: '/pages/hello/index' })
 }
 let isReady = $ref(false)
-useReady(() => {
-  setTimeout(() => {
-    isReady = true
-  }, 1500)
-})
+// useReady(() => {
+//   setTimeout(() => {
+//     isReady = true
+//   }, 1500)
+// })
+setTimeout(() => {
+  isReady = true
+}, 1500)
 </script>
 
 <template>
