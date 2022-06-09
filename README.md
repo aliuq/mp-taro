@@ -7,8 +7,6 @@
 + taro: v3.4.10
 + webpack: v4.x
 
-> 3.5.x 支持 vite 和 webpack v5
-
 ## 功能
 
 自动引入 + Typescript 类型声明，可以非常方便的进行开发
