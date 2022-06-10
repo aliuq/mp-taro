@@ -57,7 +57,7 @@ const webpackChain = (chain) => {
     },
   })
 }
-
+/** @type {import('@tarojs/taro').Config} */
 const config = {
   projectName: 'taro-unocss',
   date: '2022-6-7',
@@ -77,6 +77,7 @@ const config = {
         reactivityTransform: true, // 开启vue3响应性语法糖
       },
     }],
+    r('config/module/TimePlugin'),
   ],
   defineConstants: {
   },
