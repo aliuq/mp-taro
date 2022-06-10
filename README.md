@@ -34,6 +34,7 @@
 ## 开发
 
 ```bash
+npx degit aliuq/mp-taro .
 npm run install
 npm run dev:weapp
 npm run build:weapp
