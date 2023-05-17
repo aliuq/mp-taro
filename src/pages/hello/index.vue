@@ -5,15 +5,15 @@ const counter = useCounterStore()
 <template>
   <Layout>
     <view class="grid grid-cols-3 gap-4 px-4">
-      <button class="w-full bg-base" type="primary" size="mini" @tap="counter.increment">
+      <Button class="w-full bg-base" type="primary" size="mini" @tap="counter.increment">
         Increment
-      </button>
-      <button class="w-full bg-base" type="primary" size="mini" @tap="counter.decrement">
+      </Button>
+      <Button class="w-full bg-base" type="primary" size="mini" @tap="counter.decrement">
         Decrement
-      </button>
-      <button class="w-full bg-base" type="primary" size="mini" @tap="navigateBack">
+      </Button>
+      <Button class="w-full bg-base" type="primary" size="mini" @tap="navigateBack()">
         /home
-      </button>
+      </Button>
     </view>
     <Footer layout="hello" />
   </Layout>

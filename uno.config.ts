@@ -1,13 +1,8 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  presetTypography,
-  presetUno,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetTypography, presetUno, transformerDirectives, transformerVariantGroup } from 'unocss'
+
 import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
+import presetWeapp from 'unocss-preset-weapp'
+import { transformerAttributify, transformerClass } from 'unocss-preset-weapp/transformer'
 
 export default defineConfig({
   shortcuts: [
@@ -20,7 +15,15 @@ export default defineConfig({
   ],
   rules: [],
   presets: [
-    presetUno(),
+    presetUno({
+      preflight: false,
+    }),
+    presetWeapp({
+      isH5: process.env.TARO_ENV === 'h5',
+      platform: 'taro',
+      taroWebpack: 'webpack5',
+      whRpx: false,
+    }),
     presetAttributify(),
     presetIcons({
       collections: {
@@ -39,7 +42,7 @@ export default defineConfig({
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
+    transformerAttributify(),
+    transformerClass(),
   ],
-
 })
-

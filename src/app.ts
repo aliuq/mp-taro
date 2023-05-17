@@ -3,7 +3,6 @@ import { createPinia } from 'pinia'
 
 import 'uno.css'
 import './app.css'
-// import { setStorageSync } from '@tarojs/taro'
 
 const App = createApp({
   async onShow() {
