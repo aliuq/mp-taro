@@ -1,10 +1,10 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 import { resolveModule } from 'local-pkg'
 import type { ImportNameAlias, ImportsMap } from 'unplugin-auto-import/types'
 import { reservedKeywords } from './keywords'
 
-let _cache: ImportsMap | undefined
+const cachePath = './config/module/taro-apis.json'
 
 // generateApis()
 function generateApis() {
@@ -85,12 +85,16 @@ function readFiles(dir: string, filesList: string[] = []) {
 }
 
 export default function (): ImportsMap {
-  if (!_cache) {
-    _cache = {
-      '@tarojs/taro': generateApis() || [],
-    }
+  let jsonAPIs: (string | ImportNameAlias)[] = []
+  if (fs.existsSync(cachePath)) {
+    jsonAPIs = JSON.parse(fs.readFileSync(cachePath, 'utf-8'))
+  }
+  else {
+    jsonAPIs = generateApis() || []
+    jsonAPIs.length && fs.writeFileSync(cachePath, JSON.stringify(jsonAPIs, null, 2))
   }
 
-  return _cache || {}
+  return {
+    '@tarojs/taro': jsonAPIs,
+  }
 }
-
