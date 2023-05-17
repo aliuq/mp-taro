@@ -52,7 +52,6 @@
     "vue": "^3.3.2"
   },
   "devDependencies": {
-    "@aliuq/eslint-config": "^0.0.5",
     "@antfu/eslint-config": "^0.38.6",
     "@babel/core": "^7.21.8",
     "@iconify-json/carbon": "^1.1.16",
