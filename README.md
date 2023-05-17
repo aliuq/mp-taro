@@ -17,6 +17,7 @@
 + [`vueuse/core`](https://github.com/vueuse/vueuse): 一组高效的 Composition API 集合
 
 > **注意事项**
+>
 > + 由于小程序限制，VueUse 和元素有关的 API 都不能使用，但是，部分和 Vue 相关的 API 可以使用
 > + 由于小程序限制，UnoCSS 在页面上不能使用 Attributify 和出现非字母横线的 class 名称
 > + 依赖升级可能会出现问题，出现问题请退回到现在的版本
